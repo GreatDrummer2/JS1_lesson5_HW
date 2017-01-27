@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8">
+    <script type="text/javascript">
+      function tenToSixteenForColors(num){ //  works for the arguments  from 0 to 255
+       var n1 = Math.floor(num / 16);
+       var n2 =num % 16 ;
+       var system16 = {
+        "10" :"a",
+        "11" : "b",
+        "12" : "c",
+        "13" : "d",
+        "14" : "e",
+        "15" : "f",
+       }
+       for (var key in system16){
+        if(n1 == key){
+          n1 = system16[key];
+        }
+        if(n2 == key){
+          n2 = system16[key];
+        }
+       }
+       return String(n1) + String(n2);
+      }
+      function fronRGBToHEX (red,green,blue){
+        return "#"+ tenToSixteenForColors(red) + tenToSixteenForColors(green) + tenToSixteenForColors(blue);
+      }  
+      console.log(fronRGBToHEX(66,89,127));
+    </script>
+</head>
+<body>
+
+</body>
+</html>
